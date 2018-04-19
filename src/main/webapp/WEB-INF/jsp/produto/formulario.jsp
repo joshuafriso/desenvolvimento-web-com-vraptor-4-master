@@ -11,7 +11,7 @@
 
 	  <h1>Adicionar Produto</h1>
 	
-	  <form action="<c:url value='/produto/adiciona'/>" >
+	  <form action="<c:url value='/produto/adiciona'/>" method="post">
 	    Nome:
 	    <input class="form-control" type="text" name="produto.nome" value="${produto.nome}"/>
 	    Valor:

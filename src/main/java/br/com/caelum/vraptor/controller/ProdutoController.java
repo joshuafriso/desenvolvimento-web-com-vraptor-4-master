@@ -5,7 +5,10 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Delete;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.dao.ProdutoDao;
 import br.com.caelum.vraptor.model.Produto;
 import br.com.caelum.vraptor.util.JPAUtil;
@@ -18,24 +21,19 @@ public class ProdutoController {
 		
 	}
 	
-	@Path("/produto/lista")
+	@Get
 	public List<Produto> lista() {
 		EntityManager em = JPAUtil.criaEntityManager();
 		ProdutoDao dao = new ProdutoDao(em);
 		return dao.lista();
 	}
 	
-	@Path("/produto/sobre")
-	public void sobre() {
-		
-	}
-	
-	@Path("/produto/formulario")
+	@Get
 	public void formulario(){
 
 	}
 
-	@Path("/produto/adiciona")
+	@Post
 	public void adiciona(Produto produto) {
 	    EntityManager em = JPAUtil.criaEntityManager();
 	    em.getTransaction().begin();
@@ -44,7 +42,7 @@ public class ProdutoController {
 	    em.getTransaction().commit();
 	}
 	
-	@Path("/produto/remove")
+	@Delete
 	public void remove(Produto produto) {
 	    EntityManager em = JPAUtil.criaEntityManager();
 	    em.getTransaction().begin();
