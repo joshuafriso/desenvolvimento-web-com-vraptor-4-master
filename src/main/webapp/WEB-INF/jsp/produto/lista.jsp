@@ -35,6 +35,12 @@
 	<a href="<c:url value='/produto/formulario'/>">
     	Adicionar mais produtos!
 	</a>
+	<a href="<c:url value='/produto/listaEmXml'/>">
+    	Acesse essa lista em XML!
+	</a>
+	<c:if test="${not empty mensagem}">
+    	<div class="alert alert-success">${mensagem}</div>
+	</c:if>
 	</div>
 </body>
 </html>
